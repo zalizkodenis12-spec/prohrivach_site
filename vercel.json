@@ -1,0 +1,16 @@
+{
+  "rewrites": [
+    {
+      "source": "/landing-template-assets/:path*",
+      "destination": "https://lp-mobi.biz/landing-template-assets/:path*"
+    },
+    {
+      "source": "/storage/:path*",
+      "destination": "https://lp-mobi.biz/storage/:path*"
+    },
+    {
+      "source": "/js/:path*",
+      "destination": "https://lp-mobi.biz/js/:path*"
+    }
+  ]
+}
