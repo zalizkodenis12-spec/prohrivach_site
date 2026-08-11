@@ -243,5 +243,28 @@
 
 
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"b84a06b9e32d4f679b74d1c302bc1725","r":1}' crossorigin="anonymous"></script>
+<script>
+setInterval(function() {
+    var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
+    var node;
+    while (node = walker.nextNode()) {
+        if (node.nodeValue.includes('Хочете насолоджуватись напоєм без цих проблем')) {
+            var el = node.parentElement;
+            var target = null;
+            while (el && el.tagName !== 'BODY') {
+                if (el.tagName === 'SECTION') { target = el; break; }
+                if (el.parentElement && (el.parentElement.id === 'modular' || el.parentElement.tagName.toUpperCase() === 'MODULAR-LANDING')) {
+                    target = el;
+                    break;
+                }
+                el = el.parentElement;
+            }
+            if (target) {
+                target.style.setProperty('background', '#000000', 'important');
+            }
+        }
+    }
+}, 500);
+</script>
 </body>
 </html>
